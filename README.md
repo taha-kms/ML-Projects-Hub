@@ -1,5 +1,5 @@
 
-Welcome to **ML-Projects-Hub**! 🚀
+# Welcome to **ML-Projects-Hub**! 🚀
 
 This repository serves as a centralized hub for various **Machine Learning projects**, each focusing on different domains such as **image classification, sound recognition, natural language processing, and more**. It allows developers, researchers, and ML enthusiasts to explore, contribute, and experiment with machine learning models.
 
