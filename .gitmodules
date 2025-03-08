@@ -1,0 +1,3 @@
+[submodule "Speech-Digit-Classification"]
+	path = Speech-Digit-Classification
+	url = https://github.com/taha-kms/Speech-Digit-Classification.git
