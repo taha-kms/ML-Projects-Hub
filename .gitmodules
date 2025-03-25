@@ -1,3 +1,6 @@
 [submodule "Speech-Digit-Classification"]
 	path = Speech-Digit-Classification
 	url = https://github.com/taha-kms/Speech-Digit-Classification.git
+[submodule "Health-Risk-Predictor"]
+	path = Health-Risk-Predictor
+	url = https://github.com/taha-kms/Health-Risk-Predictor.git
