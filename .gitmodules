@@ -4,3 +4,6 @@
 [submodule "Health-Risk-Predictor"]
 	path = Health-Risk-Predictor
 	url = https://github.com/taha-kms/Health-Risk-Predictor.git
+[submodule "context-hub"]
+	path = context-hub
+	url = git@github.com:taha-kms/context-hub.git
