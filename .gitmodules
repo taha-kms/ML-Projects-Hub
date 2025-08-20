@@ -7,3 +7,6 @@
 [submodule "context-hub"]
 	path = context-hub
 	url = git@github.com:taha-kms/context-hub.git
+[submodule "Tweet-Sentiment-Analysis"]
+	path = Tweet-Sentiment-Analysis
+	url = git@github.com:taha-kms/Tweet-Sentiment-Analysis.git
