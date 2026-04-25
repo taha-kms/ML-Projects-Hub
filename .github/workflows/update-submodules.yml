@@ -1,0 +1,36 @@
+name: Update submodules
+
+on:
+  schedule:
+    # Every Monday at 06:00 UTC
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (with submodules)
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Pull latest commit on each submodule's tracked branch
+        run: git submodule update --remote --merge --recursive
+
+      - name: Open PR if anything changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore: bump submodule pointers"
+          title: "chore: bump submodule pointers"
+          body: |
+            Automated weekly update of submodule pointers to the latest commit
+            on each submodule's tracked branch (see `.gitmodules`).
+          branch: chore/update-submodules
+          delete-branch: true
