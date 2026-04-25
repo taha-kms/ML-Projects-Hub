@@ -1,12 +1,16 @@
 [submodule "Speech-Digit-Classification"]
 	path = Speech-Digit-Classification
 	url = https://github.com/taha-kms/Speech-Digit-Classification.git
+	branch = main
 [submodule "Health-Risk-Predictor"]
 	path = Health-Risk-Predictor
 	url = https://github.com/taha-kms/Health-Risk-Predictor.git
-[submodule "context-hub"]
-	path = Context-RAG
-	url = git@github.com:taha-kms/context-hub.git
+	branch = main
 [submodule "Tweet-Sentiment-Analysis"]
 	path = Tweet-Sentiment-Analysis
 	url = git@github.com:taha-kms/Tweet-Sentiment-Analysis.git
+	branch = main
+[submodule "CLASSMATE-RAG"]
+	path = CLASSMATE-RAG
+	url = https://github.com/taha-kms/CLASSMATE-RAG.git
+	branch = main
