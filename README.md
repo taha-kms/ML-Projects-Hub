@@ -1,56 +1,62 @@
+# ML-Projects-Hub
 
-# Welcome to **ML-Projects-Hub**! 🚀
+A curated collection of machine-learning projects, organized as Git submodules. Each submodule is an independent, self-contained repository — this hub provides a single entry point for cloning, browsing, and keeping them up to date.
 
-This repository serves as a centralized hub for various **Machine Learning projects**, each focusing on different domains such as **image classification, sound recognition, natural language processing, and more**. It allows developers, researchers, and ML enthusiasts to explore, contribute, and experiment with machine learning models.
+## Projects
 
-## Repository Structure
-The repository follows a modular structure using **Git submodules** to link multiple ML projects:
+| Project | Domain | Stack | Description |
+|---|---|---|---|
+| [CLASSMATE-RAG](https://github.com/taha-kms/CLASSMATE-RAG) | NLP / RAG | Python, ChromaDB, llama.cpp | Local-first retrieval-augmented generation system for course materials. Hybrid BM25 + vector retrieval with subject-aware routing, multilingual embeddings, and offline GGUF LLMs. |
+| [Speech-Digit-Classification](https://github.com/taha-kms/Speech-Digit-Classification) | Audio / CV | TensorFlow, CNN | Spoken-digit (0–9) classifier trained on Mel-spectrogram features from the Free Spoken Digit Dataset. |
+| [Health-Risk-Predictor](https://github.com/taha-kms/Health-Risk-Predictor) | Healthcare / DL | TensorFlow | Clinical survival prediction using a deep neural network. |
+| [Tweet-Sentiment-Analysis](https://github.com/taha-kms/Tweet-Sentiment-Analysis) | NLP | Python | Predicting emotional polarity in tweets. |
+
+## Getting Started
+
+Clone with all submodules:
+
+```sh
+git clone --recurse-submodules https://github.com/taha-kms/ML-Projects-Hub.git
+```
+
+If you've already cloned without submodules:
+
+```sh
+make init
+```
+
+## Common Tasks
+
+A `Makefile` wraps the common submodule chores:
+
+```sh
+make init      # initialize submodules after a plain clone
+make update    # pull the latest commit on main for every submodule
+make status    # show submodule status
+make foreach CMD="git log -1 --oneline"   # run a command in each submodule
+```
+
+All submodules track their `main` branch (configured in `.gitmodules`), so `make update` advances each one to the latest upstream commit and stages the new pointers in this repo.
+
+## Repository Layout
+
 ```
 ML-Projects-Hub/
-├── Speech-Digit-Classification/      (linked submodule)
-├── Tweet-Sentimentp-Classification/  (linked submodule)
-├── ...                               (linked submodule)
-```
-Each submodule represents an **independent ML project** hosted in a separate repository.
-
----
-
-## Purpose of This Repository
-✅ Organize multiple **Machine Learning projects** in one hub.  
-✅ Maintain modularity by keeping projects as **separate repositories**.  
-✅ Enable **easy cloning, updates, and contributions** for all linked projects.  
-✅ Serve as a learning resource for **ML enthusiasts and researchers**.  
-
----
-
-## How to Use This Repository
-
-### Clone the Repository with All Submodules
-To download the repository along with all linked ML project submodules, use:
-```sh
-git clone --recurse-submodules https://github.com/yourusername/ML-Projects-Hub.git
-```
-If you already cloned the repository without submodules, initialize them manually:
-```sh
-git submodule update --init --recursive
+├── CLASSMATE-RAG/                (submodule)
+├── Health-Risk-Predictor/        (submodule)
+├── Speech-Digit-Classification/  (submodule)
+├── Tweet-Sentiment-Analysis/     (submodule)
+├── .github/workflows/            CI to keep submodules fresh
+├── CONTRIBUTING.md
+├── LICENSE
+├── Makefile
+└── README.md
 ```
 
-### Updating Submodules
-When a submodule repository is updated, you can pull the latest changes:
-```sh
-git submodule update --remote --merge
-```
+## Contributing
 
+See [CONTRIBUTING.md](CONTRIBUTING.md). New ML projects, fixes, and documentation improvements are welcome.
 
-## 🤝 Contributing
-We welcome contributions! Feel free to:
-- Add new ML projects.
-- Improve existing models.
-- Enhance documentation.
+## License
 
-**To contribute:**
-1. Fork the repository.
-2. Make changes or add a new ML project.
-3. Submit a pull request.
-
----
+The hub itself is released under the [MIT License](LICENSE). Each linked submodule is governed by its own license — check the individual repository.
