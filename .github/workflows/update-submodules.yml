@@ -21,8 +21,11 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Sync submodule URLs and branches
+        run: git submodule sync --recursive
+
       - name: Pull latest commit on each submodule's tracked branch
-        run: git submodule update --remote --merge --recursive
+        run: git submodule update --init --remote --merge --recursive
 
       - name: Open PR if anything changed
         uses: peter-evans/create-pull-request@v6
